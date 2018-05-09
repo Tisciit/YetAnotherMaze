@@ -1,1 +1,1 @@
-# YetAnotherMaze
+#MazeGame
