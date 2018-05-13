@@ -1,7 +1,8 @@
-let ROWS = 100;
+let ROWS = 80;
 let COLS = 100;
-let SIZE = 10;
+let SIZE = 20;
 let STEP = 1;
+let RUNNERS_TOTAL = 200;
 
 let intervals = 1;
 let maze;
@@ -18,23 +19,19 @@ function setup() {
 
 
   //new Runner(0, 0, color(200, 200, 200), new Controls(87, 68, 83, 65, CONTROL));
-  for (let i = 0; i < 100; i++) {
+  for (let i = 0; i < RUNNERS_TOTAL/4; i++) {
+    //Top Left
     new Runner(maze, 0, 0, color(255, 0, 0));
-    //Random location
-    //new Runner(maze, Math.floor(random(0, COLS - 2)), Math.floor(random(0, ROWS - 2)), color(random(255), random(255), random(255)));
-  }
-  for (let i = 0; i < 100; i++) {
+    
+    //Bottom Left
     new Runner(maze, 0, ROWS - 1, color(0, 255, 0));
-  }
-  for (let i = 0; i < 100; i++) {
+    
+    //Bottom Right
     new Runner(maze, COLS - 1, ROWS - 1, color(0, 0, 255));
-  }
-  for (let i = 0; i < 100; i++) {
+    
+    //Top Right
     new Runner(maze, COLS - 1, 0, color(255, 0, 255));
   }
-
-  //r = new Runner(maze, 0, ROWS - 1, color(0, 255, 200), new Controls(UP_ARROW, RIGHT_ARROW, DOWN_ARROW, LEFT_ARROW, 32));
-
   frameRate(60);
 }
 
